@@ -38,6 +38,32 @@ TEMPLATE_DIRS = (
 )
 
 
+Execute no terminal:
+
+$ python manage.py syncdb
+
+$ python manage.py runserver
+
+
+Abra o navegador e adicione o endereço: http://localhost:8000
+
+
+Os serviços estão disponíveis em:
+
+-BOLSISTAS
+http://localhost:8000/api/bolsistas
+
+http://localhost:8000/api/bolsista/{codigo_bolsista}
+Ex: http://localhost:8000/api/bolsista/1
+
+-AJUDA DE CUSTO
+http://localhost:8000/api/lista_ajuda
+
+http://localhost:8000/api/ajuda_custo/{codigo_ajuda}
+Ex: http://localhost:8000/api/ajuda_custo/1
+
+-EDITAL
+http://localhost:8000/api/edital
 
 
 
