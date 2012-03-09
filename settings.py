@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'ddiex_social.aplicacao',
     'django.contrib.admin',
+    'piston',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

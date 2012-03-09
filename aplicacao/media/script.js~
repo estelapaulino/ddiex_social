@@ -11,9 +11,7 @@ jQuery(function($){
     $("#id_telefone").mask("(99)9999-9999");
     $("#id_celular").mask("(99)9999-9999");     
     $("#id_hora_inicio").mask("99:99");  
-    $("#id_hora_fim").mask("99:99");
-    $("#id_agencia").mask("9999-9");  
-    $("#id_conta_corrente").mask("99999-9");  
+    $("#id_hora_fim").mask("99:99");  
 });
 
 function maiuscula(id){

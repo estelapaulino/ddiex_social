@@ -5,6 +5,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+
+
+    url(r'^servico/', 'ddiex_social.aplicacao.views.servico', name='servico'),
+
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
@@ -24,8 +29,6 @@ urlpatterns = patterns('',
     url(r'^cadastrar_edital/', 'ddiex_social.aplicacao.views.cadastrar_edital', name='cadastrar_edital'),
     url(r'^editar_edital/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.editar_edital', name='editar_edital'),
     url(r'^excluir_edital/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.excluir_edital', name='excluir_edital'),
-    
-    
     url(r'^setor/', 'ddiex_social.aplicacao.views.setor', name='setor'),
     url(r'^cadastrar_setor/', 'ddiex_social.aplicacao.views.cadastrar_setor', name='cadastrar_setor'),
     url(r'^editar_setor/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.editar_setor', name='editar_setor'),
@@ -47,4 +50,5 @@ urlpatterns = patterns('',
         {'document_root': settings.MEDIA_ROOT}),
     (r'^login/', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     (r'^logout/', 'django.contrib.auth.views.logout', {'template_name': 'logout.html', 'next_page': '/login'}),
+    
 )

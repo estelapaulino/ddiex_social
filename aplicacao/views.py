@@ -21,6 +21,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import User
 import mimetypes, os
+import pycurl
 
 
 
@@ -355,4 +356,3 @@ def relatorio(request):
     else:
         return render_to_response('relatorio.html', {'user':request.user, 'edital':edital})
     
-

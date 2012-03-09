@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	padding: 0px;
-    background: url(images/img05.jpg) no-repeat center top;
+    background: url(images/banner.png) no-repeat center top;
 	background-color: #242323;
 	text-align: justify;
 	font: 13px Arial, Helvetica, sans-serif;

@@ -1,9 +1,0 @@
-myuser.groups.add(group1, group2,...)
-
-
-myuser.groups.remove(group1, group2,...)
-
-
-
-
-

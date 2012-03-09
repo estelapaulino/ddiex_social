@@ -1,13 +1,4 @@
 {% extends 'base.html' %}
-{% block scripts %}
-    <script type="text/javascript">
-        $.noConflict( )
-        function maiuscula(valor){
-            var elemento=document.form;
-            elemento.descricao.value=elemento.descricao.value.toUpperCase();
-        }        
-    </script> 
-{% endblock scripts %}
 {% block subtitle %}
     <center> Cadastro de Bolsa </center>
 {% endblock subtitle %}

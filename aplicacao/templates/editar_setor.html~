@@ -39,46 +39,10 @@
 <body onload="load('{{load}}')">
     <form name="form" action="/editar_setor/{{codigo}}" enctype="multipart/form-data" method="post">
         <table align="center">
-            <fildset>                            
+            <fildset>   
+                {{form.as_table}}                         
                 <tr><td>&nbsp;</td></tr>                            
-                 <tr>
-                    <th>
-                        Descrição:
-                        {% if erro %}
-                            <ul class="errorlist">
-                                <li>{{form.descricao.errors}}</li>
-                            </ul>
-                    	{% endif %}
-                    </th>
-                </tr>
-                <tr><td colspan="2">{{form.descricao}}</td></tr>
-                <tr>
-                    <th>
-                        Setor:
-                        {% if erro %}
-                            <ul class="errorlist">
-                                <li>{{form.setor.errors}}</li>
-                            </ul>
-                    	{% endif %}
-                    </th>
-                </tr>
-                <tr><td colspan="2">{{form.setor}}</td></tr>
-                <tr>
-                    <th id="diretoria">
-                        Diretoria:
-                        {% if erro %}
-                            <ul class="errorlist">
-                                <li>{{mensagem_erro}}</li>
-                            </ul>
-                    	{% endif %}
-                    </th>
-                </tr>
-                <tr id="diretoria1">
-                    <td colspan="2">{{form.diretoria}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-	            </tr>
+                 
 	            <tr>
                     <td colspan="2">
                         <input type="submit" value="Alterar">

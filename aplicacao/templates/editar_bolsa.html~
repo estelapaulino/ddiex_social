@@ -20,7 +20,7 @@
                     <td colspan="2">
                         <input type="submit" value="Alterar"/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="button" value="Excluir" onclick="location.href='/excluir_material/{{codigo}}/'">
+                        <input type="button" value="Excluir" onclick="location.href='/excluir_bolsa/{{codigo}}/'">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="button" value="Voltar" onclick="history.go(-1)">
                     </td>

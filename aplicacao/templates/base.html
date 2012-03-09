@@ -11,7 +11,8 @@
         {% endblock style %}
         {% block scripts %}
             <script type="text/javascript" src="/media/jquery.js"></script>
-            <script type="text/javascript" src="/media/site.js"></script>
+            <script type="text/javascript" src="/media/maskedinput.js"></script>
+            <script type="text/javascript" src="/media/script.js"></script>
         {% endblock scripts %}
     </head>
     <body>
@@ -21,10 +22,12 @@
             	<div id="menu">
                     <ul>
                         {% if not user.is_anonymous %}                            
-                            <li> 
-                                <b>Bem vindo(a){%for u in username%}, {{ u.nome }}{%endfor%}! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-                                <br>
-                                <i>Acessando com {{user}}.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                            <li>
+                                <font color="white"> 
+                                    <b>Bem vindo(a){%for u in username%}, {{ u.nome }}{%endfor%}! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+                                    <br>
+                                    <i>Acessando com {{user}}.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                                </font>
                             </li>
                         {% endif %}
                         <li class="active">

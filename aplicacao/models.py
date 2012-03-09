@@ -24,7 +24,7 @@ class Edital(models.Model):
     data_publicacao = models.CharField("Data da Publicação", max_length=50)
     data_expiracao = models.CharField("Data de Expiração", max_length=50)
     inicio_inscricao = models.CharField("Início da Inscrição", max_length=50)
-    fim_inscricao = models.CharField("Início da Inscrição", max_length=50)
+    fim_inscricao = models.CharField("Fim da Inscrição", max_length=50)
     hora_inicio = models.CharField("Hora de Início da Inscrição", max_length=50)
     hora_fim = models.CharField("Hora de Término da Inscrição", max_length=50)
     arquivo = UploadFile(upload_to='site/editais', max_upload_size=10000000, blank=False)
@@ -92,6 +92,15 @@ class AjudaCusto(models.Model):
 
 #Formularios
 class BolsaForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(BolsaForm, self).__init__(*args, **kwargs)
+       
+        modalidade = ['modalidade']
+        for b in modalidade:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
+        carga_horaria = ['carga_horaria']
+        for b in carga_horaria:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'num(this)'})
     class Meta:
         model = Bolsa
         
@@ -104,6 +113,10 @@ class EditalForm(ModelForm):
         bolsa = ['bolsa']
         for b in bolsa:
             self.fields[b].widget = forms.Select(choices = self.consulta())
+            
+        descricao = ['descricao']
+        for b in descricao:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
              
     def consulta(self):
         bolsa = Bolsa.objects.all()
@@ -117,6 +130,12 @@ class EditalForm(ModelForm):
         
 
 class SetorForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(SetorForm, self).__init__(*args, **kwargs)
+
+        descricao = ['descricao']
+        for b in descricao:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
     class Meta:
         model = Setor
 
@@ -151,6 +170,24 @@ class BolsistaForm(ModelForm):
         bolsa = ['Bolsa']
         for b in bolsa:
             self.fields[b].widget = forms.Select(choices = self.consulta())
+            
+        matricula = ['matricula']
+        for b in matricula:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'num(this)', 'maxlength':'12'})
+            
+        nome = ['nome']
+        for b in nome:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
+            
+        banco = ['banco']
+        for b in banco:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
+            
+        email = ['email']
+        for b in email:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'minuscula(this.id)'})
+            
+            
              
     def consulta(self):
         bolsa = Bolsa.objects.all()
@@ -164,6 +201,20 @@ class BolsistaForm(ModelForm):
         
         
 class AjudaCustoForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(AjudaCustoForm, self).__init__(*args, **kwargs)
+        
+        justificativa = ['justificativa']
+        for b in justificativa:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
+            
+        matricula = ['matricula']
+        for b in matricula:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'num(this)', 'maxlength':'12'})
+            
+        nome = ['nome']
+        for b in nome:
+            self.fields[b].widget = forms.TextInput(attrs={'onkeyup':'maiuscula(this.id)'})
                
     class Meta:
         model = AjudaCusto
