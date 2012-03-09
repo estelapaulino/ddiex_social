@@ -1,0 +1,44 @@
+Módulo DDIEX Social - Desenvolvido por Estela Paulino
+-------------------
+
+- Clonar repositório: git clone git@github.com:estelapaulino/ddiex_social.git
+
+- Para realizar a instalação, execute no terminal:
+
+./install
+ 
+Após a instalação, entre na pasta do projeto 
+
+cd pasta_aonde_esta_o_sistema/ddiex_social
+
+Altere no arquivo settings.py o nome da database e o usuário, de acordo com o que foi definido por você.
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': 'ddiex_social', #nome da sua database
+        'USER': 'admin', # nome do usuário do postgres definido por você
+        'PASSWORD': 'admin', #senha do usuário
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+
+altere as linhas, onde /home/estela é o diretório aonde está localizado o projeto
+
+MEDIA_ROOT = '/home/estela/ddiex_social/aplicacao/media/'
+
+e
+
+TEMPLATE_DIRS = (
+    '/home/estela/ddiex_social/aplicacao/templates'
+)
+
+
+
+
+
+
