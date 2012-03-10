@@ -5,15 +5,9 @@ from django.shortcuts import render_to_response, get_object_or_404
 from ddiex_social.aplicacao.models import Bolsa, BolsaForm, Edital, EditalForm, Setor, SetorForm, Inscricao, InscricaoForm, Bolsista, BolsistaForm, AjudaCusto, AjudaCustoForm
 from django.core.urlresolvers import reverse
 from django.core.mail import send_mail, get_connection, EmailMessage
-#from reportlab.pdfgen import canvas
-#from reportlab.lib.units import inch
 import os
 from django.core.urlresolvers import reverse
 from cStringIO import StringIO
-#from reportlab.lib import colors
-#from reportlab.lib.pagesizes import letter, A4
-#from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
-#from reportlab.lib.styles import getSampleStyleSheet
 from django.contrib.auth.decorators import login_required
 from django.db import connection, transaction
 from django.core.files.storage import default_storage
@@ -22,8 +16,6 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import User
 import mimetypes, os
 import pycurl
-
-
 
 #pagina principal
 def index(request):
@@ -85,9 +77,6 @@ def excluir_bolsa(request, codigo):
     voltar = '/bolsa/'
     return render_to_response('sucesso.html', {'user':request.user, 'mensagem':mensagem, 'link':voltar, 'formulario':formulario})
 
-
-
-
 #cadastro de bolsa
 @login_required
 def cadastrar_setor(request):
@@ -142,10 +131,6 @@ def excluir_setor(request, codigo):
     voltar = '/setor/'
     return render_to_response('sucesso.html', {'user':request.user, 'mensagem':mensagem, 'link':voltar, 'formulario':formulario})    
     
-
-
-
-
 #cadastro de bolsa
 @login_required
 def cadastrar_ajuda_custo(request):
@@ -200,11 +185,6 @@ def excluir_ajuda_custo(request, codigo):
     voltar = '/ajuda_custo/'
     return render_to_response('sucesso.html', {'user':request.user, 'mensagem':mensagem, 'link':voltar, 'formulario':formulario})    
     
-    
-    
-    
-    
-    
 #cadastro de bolsa
 @login_required
 def cadastrar_bolsista(request):
@@ -258,12 +238,6 @@ def excluir_bolsista(request, codigo):
     formulario = 'Excluir bolsista'
     voltar = '/bolsista/'
     return render_to_response('sucesso.html', {'user':request.user, 'mensagem':mensagem, 'link':voltar, 'formulario':formulario})    
-    
-
-    
-    
-    
-    
     
 #cadastro de bolsa
 @login_required
@@ -356,3 +330,5 @@ def relatorio(request):
     else:
         return render_to_response('relatorio.html', {'user':request.user, 'edital':edital})
     
+    
+

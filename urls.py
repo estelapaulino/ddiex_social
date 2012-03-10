@@ -1,30 +1,18 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
 
-
-    url(r'^servico/', 'ddiex_social.aplicacao.views.servico', name='servico'),
-
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    
+    url(r'^admin/', include(admin.site.urls)),    
+    (r'^api/', include('ddiex_social.api.urls')),    
     url(r'^$', 'ddiex_social.aplicacao.views.index', name='index'),
     url(r'^bolsa/', 'ddiex_social.aplicacao.views.bolsa', name='bolsa'),
     url(r'^cadastrar_bolsa/', 'ddiex_social.aplicacao.views.cadastrar_bolsa', name='cadastrar_bolsa'),
     url(r'^editar_bolsa/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.editar_bolsa', name='editar_bolsa'),
-    url(r'^excluir_bolsa/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.excluir_bolsa', name='excluir_bolsa'),
-    
-    url(r'^inscricao/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.inscricao', name='inscricao'),
-    
-    
+    url(r'^excluir_bolsa/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.excluir_bolsa', name='excluir_bolsa'),    
+    url(r'^inscricao/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.inscricao', name='inscricao'),        
     url(r'^edital/', 'ddiex_social.aplicacao.views.edital', name='edital'),
     url(r'^cadastrar_edital/', 'ddiex_social.aplicacao.views.cadastrar_edital', name='cadastrar_edital'),
     url(r'^editar_edital/(?P<codigo>\d+)', 'ddiex_social.aplicacao.views.editar_edital', name='editar_edital'),
